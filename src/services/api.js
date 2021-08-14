@@ -1,4 +1,4 @@
-const API_URL = `andre23arruda-m2b.herokuapp.com`
+const API_URL = `aa-shortenerurl.herokuapp.com`
 const baseUrl = `https://${ API_URL }/`
 
 async function getApi(route, token='') {

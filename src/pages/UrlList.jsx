@@ -60,16 +60,15 @@ export default function UrlList() {
 
 	const [urlList, setUrlList] = useState([])
 
-	async function loadUrlList() {
-        const response = await getApi('api/m2b/', auth)
-        if (response) {
-            setUrlList(response)
-        }
-    }
-
-    useEffect( () => {
-        loadUrlList()
-    }, [])
+    useEffect(() => {
+        async function loadUrlList() {
+			const response = await getApi('api/m2b/', auth)
+			if (response) {
+				setUrlList(response)
+			}
+		}
+		loadUrlList()
+    }, [auth])
 
 	const handleChangePage = (event, newPage) => {
 		setPage(newPage)

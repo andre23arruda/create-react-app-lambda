@@ -1,7 +1,6 @@
 const API_URL = `andre23arruda-m2b.herokuapp.com`
 const baseUrl = `https://${ API_URL }/`
 
-
 async function getApi(route, token='') {
     return fetch(baseUrl + route,
         {

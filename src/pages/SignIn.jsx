@@ -57,7 +57,10 @@ export default function SignIn() {
         if (response.token) {
 			localStorage.setItem('auth', response.token)
 			history.push('/list')
-        }
+        } else {
+			setUsername('')
+			setPassword('')
+		}
     }
 
 	function validateForm() {
@@ -91,6 +94,7 @@ export default function SignIn() {
 						name="username"
 						autoComplete="username"
 						autoFocus
+						value={ username }
 						onChange={ e => setUsername(e.target.value) }
 					/>
 
@@ -104,6 +108,7 @@ export default function SignIn() {
 						type="password"
 						id="password"
 						autoComplete="current-password"
+						value={ password }
 						onChange={ e => setPassword(e.target.value) }
 					/>
 
